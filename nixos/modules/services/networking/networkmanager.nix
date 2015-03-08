@@ -118,6 +118,30 @@ in {
         '';
       };
 
+      dispatcherScripts = mkOption {
+        type = types.listOf (types.submodule {
+          options = {
+            source = mkOption {
+              type = types.str;
+              description = ''
+                A script source.
+              '';
+            };
+
+            type = mkOption {
+              type = types.enum [ "default" ]; # Placeholder for pre-up and pre-down types which were introduced in NM 1.0
+              default = "default";
+              description = ''
+                Dispatcher hook type. Only default is currently available.
+              '';
+            };
+          };
+        });
+        default = [];
+        description = ''
+          A list of scripts which will be executed in response to  network  events.
+        '';
+      };
     };
   };
 
@@ -155,7 +179,11 @@ in {
     ] ++ optional (cfg.appendNameservers == [] || cfg.insertNameservers == [])
            { source = overrideNameserversScript;
              target = "NetworkManager/dispatcher.d/02overridedns";
-           };
+           }
+      ++ lib.imap (i: s: {
+        text = s.source;
+        target = "NetworkManager/dispatcher.d/03userscript${lib.fixedWidthNumber 4 i}";
+      }) cfg.dispatcherScripts;
 
     environment.systemPackages = cfg.packages ++ [
         networkmanager_openvpn
