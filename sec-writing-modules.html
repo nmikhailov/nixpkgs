@@ -21,7 +21,7 @@ to cause files to be created in
 <code class="filename">/etc/pam.d</code>.</p><p><a id="para-module-syn"></a>In <a class="xref" href="sec-configuration-syntax.html" title="Chapter 5. Configuration Syntax">Chapter 5, <em>Configuration Syntax</em></a>, we saw the following structure
 of NixOS modules:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 { config, pkgs, ... }:
 
 { <em class="replaceable"><code>option definitions</code></em>
@@ -30,7 +30,7 @@ of NixOS modules:
 
 This is actually an <span class="emphasis"><em>abbreviated</em></span> form of module
 that only defines options, but does not declare any.  The structure of
-full NixOS modules is shown in <a class="xref" href="sec-writing-modules.html#ex-module-syntax" title="Example 22.1. Structure of NixOS Modules">Example 22.1, “Structure of NixOS Modules”</a>.</p><div class="example"><a id="ex-module-syntax"></a><p class="title"><strong>Example 22.1. Structure of NixOS Modules</strong></p><div class="example-contents"><pre class="programlisting">
+full NixOS modules is shown in <a class="xref" href="sec-writing-modules.html#ex-module-syntax" title="Example 22.1. Structure of NixOS Modules">Example 22.1, “Structure of NixOS Modules”</a>.</p><div class="example"><a id="ex-module-syntax"></a><p class="title"><strong>Example 22.1. Structure of NixOS Modules</strong></p><div class="example-contents"><pre class="programlisting ">
 { config, pkgs, ... }: <a id="module-syntax-1"></a><span><img src="images/callouts/1.gif" alt="1" border="0" /></span>
 
 {
@@ -72,7 +72,7 @@ update should be done).  It implements its functionality by defining
 two options declared by other modules:
 <code class="option">systemd.services</code> (the set of all systemd services)
 and <code class="option">services.cron.systemCronJobs</code> (the list of
-commands to be executed periodically by <span class="command"><strong>cron</strong></span>).</p><div class="example"><a id="locate-example"></a><p class="title"><strong>Example 22.2. NixOS Module for the “locate” Service</strong></p><div class="example-contents"><pre class="programlisting">
+commands to be executed periodically by <span class="command"><strong>cron</strong></span>).</p><div class="example"><a id="locate-example"></a><p class="title"><strong>Example 22.2. NixOS Module for the “locate” Service</strong></p><div class="example-contents"><pre class="programlisting ">
 { config, lib, pkgs, ... }:
 
 with lib;
@@ -128,7 +128,7 @@ of a NixOS configuration option.  It is illegal to define an option
 that hasn’t been declared in any module.  A option declaration
 generally looks like this:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 options = {
   <em class="replaceable"><code>name</code></em> = mkOption {
     type = <em class="replaceable"><code>type specification</code></em>;
@@ -163,7 +163,7 @@ You can also create new types using the function
 <code class="varname">mkOptionType</code>.  See
 <code class="filename">lib/types.nix</code> in Nixpkgs for details.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="sec-option-definitions"></a>22.2. Option Definitions</h2></div></div></div><p>Option definitions are generally straight-forward bindings of values to option names, like
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 config = {
   services.httpd.enable = true;
 };
@@ -171,11 +171,11 @@ config = {
 
 However, sometimes you need to wrap an option definition or set of
 option definitions in a <span class="emphasis"><em>property</em></span> to achieve
-certain effects:</p><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idm140737316665520"></a>Delaying Conditionals</h3></div></div></div><p>If a set of option definitions is conditional on the value of
+certain effects:</p><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idm140737316600128"></a>Delaying Conditionals</h3></div></div></div><p>If a set of option definitions is conditional on the value of
 another option, you may need to use <code class="varname">mkIf</code>.
 Consider, for instance:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 config = if config.services.httpd.enable then {
   environment.systemPackages = [ <em class="replaceable"><code>...</code></em> ];
   <em class="replaceable"><code>...</code></em>
@@ -187,7 +187,7 @@ error.  Why?  Because the value of
 <code class="option">config.services.httpd.enable</code> depends on the value
 being constructed here.  After all, you could also write the clearly
 circular and contradictory:
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 config = if config.services.httpd.enable then {
   services.httpd.enable = false;
 } else {
@@ -197,7 +197,7 @@ config = if config.services.httpd.enable then {
 
 The solution is to write:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 config = mkIf config.services.httpd.enable {
   environment.systemPackages = [ <em class="replaceable"><code>...</code></em> ];
   <em class="replaceable"><code>...</code></em>
@@ -208,31 +208,31 @@ The special function <code class="varname">mkIf</code> causes the evaluation of
 the conditional to be “pushed down” into the individual definitions,
 as if you had written:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 config = {
   environment.systemPackages = if config.services.httpd.enable then [ <em class="replaceable"><code>...</code></em> ] else [];
   <em class="replaceable"><code>...</code></em>
 };
 </pre><p>
 
-</p></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idm140737316657776"></a>Setting Priorities</h3></div></div></div><p>A module can override the definitions of an option in other
+</p></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idm140737316592384"></a>Setting Priorities</h3></div></div></div><p>A module can override the definitions of an option in other
 modules by setting a <span class="emphasis"><em>priority</em></span>.  All option
 definitions that do not have the lowest priority value are discarded.
 By default, option definitions have priority 1000.  You can specify an
 explicit priority by using <code class="varname">mkOverride</code>, e.g.
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 services.openssh.enable = mkOverride 10 false;
 </pre><p>
 
 This definition causes all other definitions with priorities above 10
 to be discarded.  The function <code class="varname">mkForce</code> is
-equal to <code class="varname">mkOverride 50</code>.</p></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idm140737316654016"></a>Merging Configurations</h3></div></div></div><p>In conjunction with <code class="literal">mkIf</code>, it is sometimes
+equal to <code class="varname">mkOverride 50</code>.</p></div><div class="simplesect"><div class="titlepage"><div><div><h3 class="title"><a id="idm140737316588624"></a>Merging Configurations</h3></div></div></div><p>In conjunction with <code class="literal">mkIf</code>, it is sometimes
 useful for a module to return multiple sets of option definitions, to
 be merged together as if they were declared in separate modules.  This
 can be done using <code class="varname">mkMerge</code>:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 config = mkMerge
   [ # Unconditional stuff.
     { environment.systemPackages = [ <em class="replaceable"><code>...</code></em> ];

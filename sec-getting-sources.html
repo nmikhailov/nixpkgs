@@ -6,13 +6,13 @@ uses the NixOS and Nixpkgs sources provided by the
 To modify NixOS, however, you should check out the latest sources from
 Git.  This is done using the following command:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-checkout <em class="replaceable"><code>/my/sources</code></em>
 </pre><p>
 
 or
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ mkdir -p <em class="replaceable"><code>/my/sources</code></em>
 $ cd <em class="replaceable"><code>/my/sources</code></em>
 $ nix-env -i git
@@ -30,7 +30,7 @@ then the binary cache may not have caught up yet and you’ll have to
 rebuild everything from source. So you may want to create a local
 branch based on your current NixOS version:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ <em class="replaceable"><code>/my/sources</code></em>/nixpkgs/maintainers/scripts/update-channel-branches.sh
 Fetching channels from https://nixos.org/channels:
  * [new branch]      cbe467e           -&gt; channels/remotes/nixos-unstable
@@ -44,7 +44,7 @@ $ git checkout -b local channels/current-system
 Or, to base your local branch on the latest version available in the
 NixOS channel:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ <em class="replaceable"><code>/my/sources</code></em>/nixpkgs/maintainers/scripts/update-channel-branches.sh
 $ git checkout -b local channels/remotes/nixos-unstable
 </pre><p>
@@ -56,7 +56,7 @@ upstream branch.</p><p>If you want to rebuild your system using your (modified)
 sources, you need to tell <span class="command"><strong>nixos-rebuild</strong></span> about them
 using the <code class="option">-I</code> flag:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-rebuild switch -I nixpkgs=<em class="replaceable"><code>/my/sources</code></em>/nixpkgs
 </pre><p>
 
@@ -66,7 +66,7 @@ $ nixos-rebuild switch -I nixpkgs=<em class="replaceable"><code>/my/sources</cod
 the default by adding a symlink in
 <code class="filename">~/.nix-defexpr</code>:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ ln -s <em class="replaceable"><code>/my/sources</code></em>/nixpkgs ~/.nix-defexpr/nixpkgs
 </pre><p>
 

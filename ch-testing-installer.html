@@ -3,7 +3,7 @@
 tedious, so here is a quick way to see if the installer works
 properly:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-build -A config.system.build.nixos-install
 $ mount -t tmpfs none /mnt
 $ ./result/bin/nixos-install</pre><p>
@@ -11,7 +11,7 @@ $ ./result/bin/nixos-install</pre><p>
 To start a login shell in the new NixOS installation in
 <code class="filename">/mnt</code>:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ ./result/bin/nixos-install --chroot
 </pre><p>
 

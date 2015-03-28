@@ -17,7 +17,7 @@ system.</p><div class="section"><div class="titlepage"><div><div><h2 class="titl
 <span class="command"><strong>nixos-container</strong></span> first. You create a container with
 identifier <code class="literal">foo</code> as follows:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-container create foo
 </pre><p>
 
@@ -31,7 +31,7 @@ line. For instance, to create a container that has
 <span class="command"><strong>sshd</strong></span> running, with the given public key for
 <code class="literal">root</code>:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-container create foo --config 'services.openssh.enable = true; \
   users.extraUsers.root.openssh.authorizedKeys.keys = ["ssh-dss AAAAB3N…"];'
 </pre><p>
@@ -39,7 +39,7 @@ $ nixos-container create foo --config 'services.openssh.enable = true; \
 </p><p>Creating a container does not start it. To start the container,
 run:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-container start foo
 </pre><p>
 
@@ -50,14 +50,14 @@ container runs within a systemd unit called
 Thus, if something went wrong, you can get status info using
 <span class="command"><strong>systemctl</strong></span>:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ systemctl status container@foo
 </pre><p>
 
 </p><p>If the container has started succesfully, you can log in as
 root using the <span class="command"><strong>root-login</strong></span> operation:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-container root-login foo
 [root@foo:~]#
 </pre><p>
@@ -67,7 +67,7 @@ authentication).  You can also get a regular login prompt using the
 <span class="command"><strong>login</strong></span> operation, which is available to all users on
 the host:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-container login foo
 foo login: alice
 Password: ***
@@ -76,7 +76,7 @@ Password: ***
 With <span class="command"><strong>nixos-container run</strong></span>, you can execute arbitrary
 commands in the container:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-container run foo -- uname -a
 Linux foo 3.4.82 #1-NixOS SMP Thu Mar 20 14:44:05 UTC 2014 x86_64 GNU/Linux
 </pre><p>
@@ -86,14 +86,14 @@ container. First, on the host, you can edit
 <code class="literal">/var/lib/container/<em class="replaceable"><code>name</code></em>/etc/nixos/configuration.nix</code>,
 and run
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-container update foo
 </pre><p>
 
 This will build and activate the new configuration. You can also
 specify a new configuration on the command line:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-container update foo --config 'services.httpd.enable = true; \
   services.httpd.adminAddr = "foo@example.org";'
 
@@ -112,7 +112,7 @@ start</code>, respectively, or by using
 <span class="command"><strong>systemctl</strong></span> on the container’s service unit. To
 destroy a container, including its file system, do
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-container destroy foo
 </pre><p>
 
@@ -121,7 +121,7 @@ host’s <code class="filename">configuration.nix</code>.  For example, the
 following specifies that there shall be a container named
 <code class="literal">database</code> running PostgreSQL:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 containers.database =
   { config =
       { config, pkgs, ... }:
@@ -138,7 +138,7 @@ of the host, meaning that they can listen on (privileged)
 ports. However, they cannot change the network configuration. You can
 give a container its own network as follows:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 containers.database =
   { privateNetwork = true;
     hostAddress = "192.168.100.10";
@@ -160,7 +160,7 @@ create</code>, it gets it own private IPv4 address in the range
 <code class="literal">10.233.0.0/16</code>. You can get the container’s IPv4
 address as follows:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-container show-ip foo
 10.233.4.2
 
@@ -182,7 +182,7 @@ rules on the host to rewrite container traffic to use your external
 IP address. This can be accomplished using the following configuration
 on the host:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.nat.enable = true;
 networking.nat.internalInterfaces = ["ve-+"];
 networking.nat.externalInterface = "eth0";

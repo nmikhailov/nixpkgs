@@ -11,7 +11,7 @@ fully described in the <a class="link" href="http://nixos.org/nix/manual/#chap-w
 manual</a>, but here we give a short overview of the most important
 constructs useful in NixOS configuration files.</p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="sec-configuration-file"></a>5.1. NixOS Configuration File</h2></div></div></div><p>The NixOS configuration file generally looks like this:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting nix">
 { config, pkgs, ... }:
 
 { <em class="replaceable"><code>option definitions</code></em>
@@ -28,7 +28,7 @@ form <code class="literal"><em class="replaceable"><code>name</code></em> =
 <em class="replaceable"><code>name</code></em> is the name of an option and
 <em class="replaceable"><code>value</code></em> is its value.  For example,
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 { config, pkgs, ... }:
 
 { services.httpd.enable = true;
@@ -47,7 +47,7 @@ shorthand for defining a set containing another set.  For instance,
 named <code class="varname">enable</code> with value <code class="literal">true</code>.
 This means that the example above can also be written as:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 { config, pkgs, ... }:
 
 { services = {
@@ -66,22 +66,22 @@ that share the same prefix (such as
 instance, if you try to define an option that doesn’t exist (that is,
 doesn’t have a corresponding <span class="emphasis"><em>option declaration</em></span>),
 <span class="command"><strong>nixos-rebuild</strong></span> will give an error like:
-</p><pre class="screen">
-The option `services.httpd.enable' defined in `/etc/nixos/configuration.nix' does not exist.
+</p><pre class="screen ">
+The option 'services.httpd.enable' defined in '/etc/nixos/configuration.nix' does not exist.
 </pre><p>
 Likewise, values in option definitions must have a correct type.  For
 instance, <code class="option">services.httpd.enable</code> must be a Boolean
 (<code class="literal">true</code> or <code class="literal">false</code>).  Trying to give
 it a value of another type, such as a string, will cause an error:
-</p><pre class="screen">
-The option value `services.httpd.enable' in `/etc/nixos/configuration.nix' is not a boolean.
+</p><pre class="screen ">
+The option value 'services.httpd.enable' in '/etc/nixos/configuration.nix' is not a boolean.
 </pre><p>
 
 </p><p>Options have various types of values.  The most important are:
 
 </p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Strings</span></dt><dd><p>Strings are enclosed in double quotes, e.g.
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.hostName = "dexter";
 </pre><p>
 
@@ -89,7 +89,7 @@ networking.hostName = "dexter";
       backslash (e.g. <code class="literal">\"</code>).</p><p>Multi-line strings can be enclosed in <span class="emphasis"><em>double
       single quotes</em></span>, e.g.
 
-</p><pre class="programlisting">
+</p><pre class="programlisting nix">
 networking.extraHosts =
   ''
     127.0.0.2 other-localhost
@@ -104,13 +104,13 @@ networking.extraHosts =
       code).</p></dd><dt><span class="term">Booleans</span></dt><dd><p>These can be <code class="literal">true</code> or
       <code class="literal">false</code>, e.g.
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.firewall.enable = true;
 networking.firewall.allowPing = false;
 </pre><p>
       </p></dd><dt><span class="term">Integers</span></dt><dd><p>For example,
 
-</p><pre class="programlisting">
+</p><pre class="programlisting nix">
 boot.kernel.sysctl."net.ipv4.tcp_keepalive_time" = 60;
 </pre><p>
 
@@ -123,7 +123,7 @@ boot.kernel.sysctl."net.ipv4.tcp_keepalive_time" = 60;
       setting.)</p></dd><dt><span class="term">Sets</span></dt><dd><p>Sets were introduced above.  They are name/value pairs
       enclosed in braces, as in the option definition
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 fileSystems."/boot" =
   { device = "/dev/sda1";
     fsType = "ext4";
@@ -133,20 +133,20 @@ fileSystems."/boot" =
       </p></dd><dt><span class="term">Lists</span></dt><dd><p>The important thing to note about lists is that list
       elements are separated by whitespace, like this:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 boot.kernelModules = [ "fuse" "kvm-intel" "coretemp" ];
 </pre><p>
 
       List elements can be any other type, e.g. sets:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 </pre><p>
       </p></dd><dt><span class="term">Packages</span></dt><dd><p>Usually, the packages you need are already part of the Nix
       Packages collection, which is a set that can be accessed through
       the function argument <code class="varname">pkgs</code>.  Typical uses:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 environment.systemPackages =
   [ pkgs.thunderbird
     pkgs.emacs
@@ -163,7 +163,7 @@ postgresql.package = pkgs.postgresql90;
 </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="sec-module-abstractions"></a>5.2. Abstractions</h2></div></div></div><p>If you find yourself repeating yourself over and over, it’s time
 to abstract.  Take, for instance, this Apache HTTP Server configuration:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 {
   services.httpd.virtualHosts =
     [ { hostName = "example.org";
@@ -187,7 +187,7 @@ It defines two virtual hosts with nearly identical configuration; the
 only difference is that the second one has SSL enabled.  To prevent
 this duplication, we can use a <code class="literal">let</code>:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 let
   exampleOrgCommon =
     { hostName = "example.org";
@@ -216,7 +216,7 @@ virtual host is the set <code class="literal">exampleOrgCommon</code> extended
 with the SSL options.</p><p>You can write a <code class="literal">let</code> wherever an expression is
 allowed.  Thus, you also could have written:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 {
   services.httpd.virtualHosts =
     let exampleOrgCommon = <em class="replaceable"><code>...</code></em>; in
@@ -234,7 +234,7 @@ abstraction.  For instance, suppose that we want to generate lots of
 different virtual hosts, all with identical configuration except for
 the host name.  This can be done as follows:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 {
   services.httpd.virtualHosts =
     let
@@ -259,7 +259,7 @@ produce the list of virtual host configurations.</p><p>We can further improve on
 <code class="varname">map</code>, which applies another function to every
 element in a list:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 {
   services.httpd.virtualHosts =
     let
@@ -276,7 +276,7 @@ want to use a different <code class="literal">documentRoot</code> for each
 virtual host?  Then we can make <code class="varname">makeVirtualHost</code> a
 function that takes a <span class="emphasis"><em>set</em></span> as its argument, like this:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 {
   services.httpd.virtualHosts =
     let
@@ -297,7 +297,7 @@ function that takes a <span class="emphasis"><em>set</em></span> as its argument
 But in this case (where every root is a subdirectory of
 <code class="filename">/sites</code> named after the virtual host), it would
 have been shorter to define <code class="varname">makeVirtualHost</code> as
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 makeVirtualHost = name:
   { hostName = name;
     documentRoot = "/sites/${name}";
@@ -317,7 +317,7 @@ you can move the common configuration into a shared file.</p><p>Modules have exa
 use other modules by including them from
 <code class="filename">configuration.nix</code>, e.g.:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 { config, pkgs, ... }:
 
 { imports = [ ./vpn.nix ./kde.nix ];
@@ -331,7 +331,7 @@ Here, we include two modules from the same directory,
 <code class="filename">vpn.nix</code> and <code class="filename">kde.nix</code>.  The
 latter might look like this:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 { config, pkgs, ... }:
 
 { services.xserver.enable = true;
@@ -352,7 +352,7 @@ packages can simply be concatenated.  The value in
 list-type options, it will appear at the end of the merged list. If
 you want it to appear first, you can use <code class="varname">mkBefore</code>:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 boot.kernelModules = mkBefore [ "kvm-intel" ];
 </pre><p>
 
@@ -362,14 +362,14 @@ instance, if two modules define
 <code class="option">services.httpd.adminAddr</code>,
 <span class="command"><strong>nixos-rebuild</strong></span> will give an error:
 
-</p><pre class="screen">
-The unique option `services.httpd.adminAddr' is defined multiple times, in `/etc/nixos/httpd.nix' and `/etc/nixos/configuration.nix'.
+</p><pre class="screen ">
+The unique option 'services.httpd.adminAddr' is defined multiple times, in '/etc/nixos/httpd.nix' and '/etc/nixos/configuration.nix'.
 </pre><p>
 
 When that happens, it’s possible to force one definition take
 precedence over the others:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 services.httpd.adminAddr = pkgs.lib.mkForce "bob@example.org";
 </pre><p>
 
@@ -378,12 +378,12 @@ configuration values defined in other modules.  This is what the
 <code class="varname">config</code> function argument is for: it contains the
 complete, merged system configuration.  That is,
 <code class="varname">config</code> is the result of combining the
-configurations returned by every module<a href="#ftn.idm140737316976944" class="footnote" id="idm140737316976944"><sup class="footnote">[1]</sup></a>.  For example, here is a module that adds
+configurations returned by every module<a href="#ftn.idm140737316911232" class="footnote" id="idm140737316911232"><sup class="footnote">[1]</sup></a>.  For example, here is a module that adds
 some packages to <code class="option">environment.systemPackages</code> only if
 <code class="option">services.xserver.enable</code> is set to
 <code class="literal">true</code> somewhere else:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 { config, pkgs, ... }:
 
 { environment.systemPackages =
@@ -400,7 +400,7 @@ some packages to <code class="option">environment.systemPackages</code> only if
 value of a configuration option is.  The command
 <code class="option">nixos-option</code> allows you to find out:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-option services.xserver.enable
 true
 
@@ -414,7 +414,7 @@ a read-eval-print loop for Nix expressions.  It’s not installed by
 default; run <code class="literal">nix-env -i nix-repl</code> to get it.  A
 typical use:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-repl '&lt;nixos&gt;'
 
 nix-repl&gt; config.networking.hostName
@@ -437,7 +437,7 @@ manual</a> for the rest.</p><div class="informaltable"><table border="0"><colgro
         <code class="literal">x</code> and <code class="literal">y</code> and ignores any
         other attributes</td></tr><tr><td><code class="literal">{ x, y } @ args: x + y</code></td><td>A function that expects a set with required attributes
         <code class="literal">x</code> and <code class="literal">y</code>, and binds the
-        whole set to <code class="literal">args</code></td></tr><tr><td colspan="2"><span class="emphasis"><em>Built-in functions</em></span></td></tr><tr><td><code class="literal">import ./foo.nix</code></td><td>Load and return Nix expression in given file</td></tr><tr><td><code class="literal">map (x: x + x) [ 1 2 3 ]</code></td><td>Apply a function to every element of a list (evaluates to <code class="literal">[ 2 4 6 ]</code>)</td></tr></tbody></table></div></div><div class="footnotes"><br /><hr style="width:100; text-align:left;margin-left: 0" /><div id="ftn.idm140737316976944" class="footnote"><p><a href="#idm140737316976944" class="para"><sup class="para">[1] </sup></a>If you’re
+        whole set to <code class="literal">args</code></td></tr><tr><td colspan="2"><span class="emphasis"><em>Built-in functions</em></span></td></tr><tr><td><code class="literal">import ./foo.nix</code></td><td>Load and return Nix expression in given file</td></tr><tr><td><code class="literal">map (x: x + x) [ 1 2 3 ]</code></td><td>Apply a function to every element of a list (evaluates to <code class="literal">[ 2 4 6 ]</code>)</td></tr></tbody></table></div></div><div class="footnotes"><br /><hr style="width:100; text-align:left;margin-left: 0" /><div id="ftn.idm140737316911232" class="footnote"><p><a href="#idm140737316911232" class="para"><sup class="para">[1] </sup></a>If you’re
 wondering how it’s possible that the (indirect)
 <span class="emphasis"><em>result</em></span> of a function is passed as an
 <span class="emphasis"><em>input</em></span> to that same function: that’s because Nix

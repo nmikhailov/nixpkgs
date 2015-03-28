@@ -5,7 +5,7 @@ following definition causes NixOS to mount the Ext4 file system on
 device <code class="filename">/dev/disk/by-label/data</code> onto the mount
 point <code class="filename">/data</code>:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 fileSystems."/data" =
   { device = "/dev/disk/by-label/data";
     fsType = "ext4";
@@ -29,7 +29,7 @@ available.</p><div class="section"><div class="titlepage"><div><div><h2 class="t
 here is how you create an encrypted Ext4 file system on the device
 <code class="filename">/dev/sda2</code>:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ cryptsetup luksFormat /dev/sda2
 
 WARNING!
@@ -50,7 +50,7 @@ To ensure that this file system is automatically mounted at boot time
 as <code class="filename">/</code>, add the following to
 <code class="filename">configuration.nix</code>:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 boot.initrd.luks.devices = [ { device = "/dev/sda2"; name = "crypted"; } ];
 fileSystems."/".device = "/dev/mapper/crypted";
 </pre><p>

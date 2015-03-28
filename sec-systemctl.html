@@ -14,7 +14,7 @@ on.</p><p>The command <span class="command"><strong>systemctl</strong></span> is
 interact with <span class="command"><strong>systemd</strong></span>.  Without any arguments, it
 shows the status of active units:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ systemctl
 -.mount          loaded active mounted   /
 swapfile.swap    loaded active active    /swapfile
@@ -26,7 +26,7 @@ graphical.target loaded active active    Graphical Interface
 </p><p>You can ask for detailed status information about a unit, for
 instance, the PostgreSQL database service:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ systemctl status postgresql.service
 postgresql.service - PostgreSQL Server
           Loaded: loaded (/nix/store/pn3q73mvh75gsrl8w7fdlfk3fq5qm5mw-unit/postgresql.service)
@@ -52,7 +52,7 @@ messages from the service.
 
 </p><p>Units can be stopped, started or restarted:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ systemctl stop postgresql.service
 $ systemctl start postgresql.service
 $ systemctl restart postgresql.service

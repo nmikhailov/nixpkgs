@@ -24,7 +24,7 @@
     makes the file system configuration independent from device
     changes.  For example:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ mkfs.ext4 -L nixos /dev/sda1</pre><p>
 
     </p></li><li class="listitem"><p>For creating swap partitions:
@@ -32,7 +32,7 @@ $ mkfs.ext4 -L nixos /dev/sda1</pre><p>
     label to the swap partition: <code class="option">-L
     <em class="replaceable"><code>label</code></em></code>.</p></li><li class="listitem"><p>For creating LVM volumes, the LVM commands, e.g.,
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ pvcreate /dev/sda1 /dev/sdb1
 $ vgcreate MyVolGroup /dev/sda1 /dev/sdb1
 $ lvcreate --size 2G --name bigdisk MyVolGroup
@@ -44,7 +44,7 @@ $ lvcreate --size 1G --name smalldisk MyVolGroup</pre><p>
   </p></li><li class="listitem"><p>Mount the target file system on which NixOS should
   be installed on <code class="filename">/mnt</code>, e.g.
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ mount /dev/disk/by-label/nixos /mnt
 </pre><p>
 
@@ -63,14 +63,14 @@ $ mount /dev/disk/by-label/nixos /mnt
     list of available configuration options appears in <a class="xref" href="ch-options.html" title="Appendix A. Configuration Options">Appendix A, <em>Configuration Options</em></a>.  A minimal example is shown in <a class="xref" href="sec-installation.html#ex-config" title="Example 2.2. NixOS Configuration">Example 2.2, “NixOS Configuration”</a>.</p><p>The command <span class="command"><strong>nixos-generate-config</strong></span> can
     generate an initial configuration file for you:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-generate-config --root /mnt</pre><p>
 
     You should then edit
     <code class="filename">/mnt/etc/nixos/configuration.nix</code> to suit your
     needs:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nano /mnt/etc/nixos/configuration.nix
 </pre><p>
 
@@ -99,7 +99,7 @@ $ nano /mnt/etc/nixos/configuration.nix
     required modules.</p></div><p>Examples of real-world NixOS configuration files can be
     found at <a class="link" href="https://nixos.org/repos/nix/configurations/trunk/" target="_top">https://nixos.org/repos/nix/configurations/trunk/</a>.</p></li><li class="listitem"><p>Do the installation:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-install</pre><p>
 
     Cross fingers.  If this fails due to a temporary problem (such as
@@ -109,7 +109,7 @@ $ nixos-install</pre><p>
     then re-run <span class="command"><strong>nixos-install</strong></span>.</p><p>As the last step, <span class="command"><strong>nixos-install</strong></span> will ask
     you to set the password for the <code class="literal">root</code> user, e.g.
 
-</p><pre class="screen">
+</p><pre class="screen ">
 setting root password...
 Enter new UNIX password: ***
 Retype new UNIX password: ***
@@ -117,7 +117,7 @@ Retype new UNIX password: ***
 
     </p></li><li class="listitem"><p>If everything went well:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ reboot</pre><p>
 
   </p></li><li class="listitem"><p>You should now be able to boot into the installed NixOS. The GRUB boot menu shows a list
@@ -128,23 +128,23 @@ $ reboot</pre><p>
     password with <span class="command"><strong>passwd</strong></span>.</p><p>You’ll probably want to create some user accounts as well,
     which can be done with <span class="command"><strong>useradd</strong></span>:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ useradd -c 'Eelco Dolstra' -m eelco
 $ passwd eelco</pre><p>
 
     </p><p>You may also want to install some software.  For instance,
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-env -qa \*</pre><p>
 
     shows what packages are available, and
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-env -i w3m</pre><p>
 
     install the <code class="literal">w3m</code> browser.</p></li></ol></div><p>To summarise, <a class="xref" href="sec-installation.html#ex-install-sequence" title="Example 2.1. Commands for Installing NixOS on /dev/sda">Example 2.1, “Commands for Installing NixOS on <code class="filename">/dev/sda</code>”</a> shows a
 typical sequence of commands for installing NixOS on an empty hard
-drive (here <code class="filename">/dev/sda</code>).  <a class="xref" href="sec-installation.html#ex-config" title="Example 2.2. NixOS Configuration">Example 2.2, “NixOS Configuration”</a> shows a corresponding configuration Nix expression.</p><div class="example"><a id="ex-install-sequence"></a><p class="title"><strong>Example 2.1. Commands for Installing NixOS on <code class="filename">/dev/sda</code></strong></p><div class="example-contents"><pre class="screen">
+drive (here <code class="filename">/dev/sda</code>).  <a class="xref" href="sec-installation.html#ex-config" title="Example 2.2. NixOS Configuration">Example 2.2, “NixOS Configuration”</a> shows a corresponding configuration Nix expression.</p><div class="example"><a id="ex-install-sequence"></a><p class="title"><strong>Example 2.1. Commands for Installing NixOS on <code class="filename">/dev/sda</code></strong></p><div class="example-contents"><pre class="screen ">
 $ fdisk /dev/sda # <em class="lineannotation"><span class="lineannotation">(or whatever device you want to install on)</span></em>
 $ mkfs.ext4 -L nixos /dev/sda1
 $ mkswap -L swap /dev/sda2
@@ -153,7 +153,7 @@ $ mount /dev/disk/by-label/nixos /mnt
 $ nixos-generate-config --root /mnt
 $ nano /mnt/etc/nixos/configuration.nix
 $ nixos-install
-$ reboot</pre></div></div><br class="example-break" /><div class="example"><a id="ex-config"></a><p class="title"><strong>Example 2.2. NixOS Configuration</strong></p><div class="example-contents"><pre class="screen">
+$ reboot</pre></div></div><br class="example-break" /><div class="example"><a id="ex-config"></a><p class="title"><strong>Example 2.2. NixOS Configuration</strong></p><div class="example-contents"><pre class="screen ">
 { config, pkgs, ... }:
 
 {

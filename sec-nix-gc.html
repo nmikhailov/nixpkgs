@@ -6,14 +6,14 @@ You should periodically run Nix’s <span class="emphasis"><em>garbage
 collector</em></span> to remove old, unreferenced packages.  This is
 easy:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-collect-garbage
 </pre><p>
 
 Alternatively, you can use a systemd unit that does the same in the
 background:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ systemctl start nix-gc.service
 </pre><p>
 
@@ -21,7 +21,7 @@ You can tell NixOS in <code class="filename">configuration.nix</code> to run
 this unit automatically at certain points in time, for instance, every
 night at 03:15:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 nix.gc.automatic = true;
 nix.gc.dates = "03:15";
 </pre><p>
@@ -30,11 +30,11 @@ nix.gc.dates = "03:15";
 as old system configurations.  Thus they do not remove the ability to
 roll back to previous configurations.  The following command deletes
 old roots, removing the ability to roll back to them:
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-collect-garbage -d
 </pre><p>
 You can also do this for specific profiles, e.g.
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-env -p /nix/var/nix/profiles/per-user/eelco/profile --delete-generations old
 </pre><p>
 Note that NixOS system configurations are stored in the profile
@@ -42,7 +42,7 @@ Note that NixOS system configurations are stored in the profile
 size of the Nix store) is to run Nix’s store optimiser, which seeks
 out identical files in the store and replaces them with hard links to
 a single copy.
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-store --optimise
 </pre><p>
 Since this command needs to read the entire Nix store, it can take

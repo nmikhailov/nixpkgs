@@ -8,7 +8,7 @@ groups in the <code class="literal">systemd</code> hierarchy, which is what
 systemd uses to keep track of the processes belonging to each service
 or user session:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ systemd-cgls
 ├─user
 │ └─eelco
@@ -37,7 +37,7 @@ contrast, it they were in the same cgroup, then the PostgreSQL process
 would get 1/1001 of the cgroup’s CPU time.)  You can limit a service’s
 CPU share in <code class="filename">configuration.nix</code>:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 systemd.services.httpd.serviceConfig.CPUShares = 512;
 </pre><p>
 
@@ -49,7 +49,7 @@ available memory.  Per-cgroup memory limits can be specified in
 <code class="filename">configuration.nix</code>; for instance, to limit
 <code class="literal">httpd.service</code> to 512 MiB of RAM (excluding swap):
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 systemd.services.httpd.serviceConfig.MemoryLimit = "512M";
 </pre><p>
 

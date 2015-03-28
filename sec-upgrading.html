@@ -35,40 +35,40 @@ instance, if you installed from a 14.12 ISO, you will be subscribed to
 the <code class="literal">nixos-14.12</code> channel.  To see which NixOS
 channel you’re subscribed to, run the following as root:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-channel --list | grep nixos
 nixos https://nixos.org/channels/nixos-unstable
 </pre><p>
 
 To switch to a different NixOS channel, do
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-channel --add https://nixos.org/channels/<em class="replaceable"><code>channel-name</code></em> nixos
 </pre><p>
 
 (Be sure to include the <code class="literal">nixos</code> parameter at the
 end.)  For instance, to use the NixOS 14.12 stable channel:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-channel --add https://nixos.org/channels/nixos-14.12 nixos
 </pre><p>
 
 If you have a server, you may want to use the “small” channel instead:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-channel --add https://nixos.org/channels/nixos-14.12-small nixos
 </pre><p>
 
 And if you want to live on the bleeding edge:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-channel --add https://nixos.org/channels/nixos-unstable nixos
 </pre><p>
 
 </p><p>You can then upgrade NixOS to the latest version in your chosen
 channel by running
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-rebuild switch --upgrade
 </pre><p>
 

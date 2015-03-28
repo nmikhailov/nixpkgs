@@ -19,14 +19,14 @@ you want on your system by setting the option
 following line to <code class="filename">configuration.nix</code> enables the
 Mozilla Thunderbird email application:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 environment.systemPackages = [ pkgs.thunderbird ];
 </pre><p>
 
 The effect of this specification is that the Thunderbird package from
 Nixpkgs will be built or downloaded as part of the system when you run
 <span class="command"><strong>nixos-rebuild switch</strong></span>.</p><p>You can get a list of the available packages as follows:
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-env -qaP '*' --description
 nixos.pkgs.firefox   firefox-23.0   Mozilla Firefox - the browser, reloaded
 <em class="replaceable"><code>...</code></em>
@@ -55,7 +55,7 @@ of a package.  For instance, the Emacs package in Nixpkgs by default
 has a dependency on GTK+ 2.  If you want to build it against GTK+ 3,
 you can specify that as follows:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 environment.systemPackages = [ (pkgs.emacs.override { gtk = pkgs.gtk3; }) ];
 </pre><p>
 
@@ -76,7 +76,7 @@ permits changing any aspect of the package, such as the source code.
 For instance, if you want to override the source code of Emacs, you
 can say:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 environment.systemPackages =
   [ (pkgs.lib.overrideDerivation pkgs.emacs (attrs: {
       name = "emacs-25.0-pre";
@@ -98,7 +98,7 @@ end up with two instances of the package.  If you want to have
 everything depend on your customised instance, you can apply a
 <span class="emphasis"><em>global</em></span> override as follows:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 nixpkgs.config.packageOverrides = pkgs:
   { emacs = pkgs.emacs.override { gtk = pkgs.gtk3; };
   };
@@ -118,7 +118,7 @@ patch or pull request to have it accepted into the main Nixpkgs
 repository.  This is described in detail in the <a class="link" href="http://nixos.org/nixpkgs/manual" target="_top">Nixpkgs manual</a>.
 In short, you clone Nixpkgs:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ git clone git://github.com/NixOS/nixpkgs.git
 $ cd nixpkgs
 </pre><p>
@@ -127,14 +127,14 @@ Then you write and test the package as described in the Nixpkgs
 manual.  Finally, you add it to
 <code class="literal">environment.systemPackages</code>, e.g.
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 environment.systemPackages = [ pkgs.my-package ];
 </pre><p>
 
 and you run <span class="command"><strong>nixos-rebuild</strong></span>, specifying your own
 Nixpkgs tree:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nixos-rebuild switch -I nixpkgs=/path/to/my/nixpkgs</pre><p>
 
 </p><p>The second possibility is to add the package outside of the
@@ -142,7 +142,7 @@ Nixpkgs tree.  For instance, here is how you specify a build of the
 <a class="link" href="http://www.gnu.org/software/hello/" target="_top">GNU Hello</a>
 package directly in <code class="filename">configuration.nix</code>:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 environment.systemPackages =
   let
     my-hello = with pkgs; stdenv.mkDerivation rec {
@@ -158,11 +158,11 @@ environment.systemPackages =
 
 Of course, you can also move the definition of
 <code class="literal">my-hello</code> into a separate Nix expression, e.g.
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 environment.systemPackages = [ (import ./my-hello.nix) ];
 </pre><p>
 where <code class="filename">my-hello.nix</code> contains:
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 with import &lt;nixpkgs&gt; {}; # bring all of Nixpkgs into scope
 
 stdenv.mkDerivation rec {
@@ -175,7 +175,7 @@ stdenv.mkDerivation rec {
 </pre><p>
 
 This allows testing the package easily:
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-build my-hello.nix
 $ ./result/bin/hello
 Hello, world!
@@ -185,7 +185,7 @@ Hello, world!
 uninstall packages from the command line.  For instance, to install
 Mozilla Thunderbird:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-env -iA nixos.pkgs.thunderbird</pre><p>
 
 If you invoke this as root, the package is installed in the Nix
@@ -199,7 +199,7 @@ is installed by matching against its package name
 it requires matching against all available Nix packages, and is
 ambiguous if there are multiple matching packages.</p><p>Packages come from the NixOS channel.  You typically upgrade a
 package by updating to the latest version of the NixOS channel:
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-channel --update nixos
 </pre><p>
 and then running <code class="literal">nix-env -i</code> again.  Other packages
@@ -209,17 +209,17 @@ where running <span class="command"><strong>nixos-rebuild switch</strong></span>
 packages to be updated to their current versions in the NixOS channel.
 You can however upgrade all packages for which there is a newer
 version by doing:
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-env -u '*'
 </pre><p>
 </p><p>A package can be uninstalled using the <code class="option">-e</code>
 flag:
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-env -e thunderbird
 </pre><p>
 </p><p>Finally, you can roll back an undesirable
 <span class="command"><strong>nix-env</strong></span> action:
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-env --rollback
 </pre><p>
 </p><p><span class="command"><strong>nix-env</strong></span> has many more flags.  For details,

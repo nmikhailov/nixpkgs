@@ -32,14 +32,14 @@ the following highlights:
   overridden from the NixOS configuration. For instance, if a package
   <code class="literal">foo</code> provides systemd units, you can say:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 systemd.packages = [ pkgs.foo ];
 </pre><p>
 
   to enable those units. You can then set or override unit options in
   the usual way, e.g.
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 systemd.services.foo.wantedBy = [ "multi-user.target" ];
 systemd.services.foo.serviceConfig.MemoryLimit = "512M";
 </pre><p>
@@ -53,13 +53,13 @@ following incompatible changes:
   default. If your NixOS configuration requires unfree packages from
   Nixpkgs, you need to enable support for them explicitly by setting:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 nixpkgs.config.allowUnfree = true;
 </pre><p>
 
   Otherwise, you get an error message such as:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 error: package ‘nvidia-x11-331.49-3.12.17’ in ‘…/nvidia-x11/default.nix:56’
   has an unfree license, refusing to evaluate
 </pre><p>
@@ -68,7 +68,7 @@ error: package ‘nvidia-x11-331.49-3.12.17’ in ‘…/nvidia-x11/default.nix:
   default in the Firefox and Chromium wrappers. To enable it, you must
   set:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 nixpkgs.config.allowUnfree = true;
 nixpkgs.config.firefox.enableAdobeFlash = true; # for Firefox
 nixpkgs.config.chromium.enableAdobeFlash = true; # for Chromium
@@ -77,7 +77,7 @@ nixpkgs.config.chromium.enableAdobeFlash = true; # for Chromium
   </p></li><li class="listitem"><p>The firewall is now enabled by default. If you don’t
   want this, you need to disable it explicitly:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.firewall.enable = false;
 </pre><p>
 

@@ -4,7 +4,7 @@ management.  In the declarative style, users are specified in
 <code class="filename">configuration.nix</code>.  For instance, the following
 states that a user account named <code class="literal">alice</code> shall exist:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 users.extraUsers.alice =
   { isNormalUser = true;
     home = "/home/alice";
@@ -30,14 +30,14 @@ account will cease to exist. Also, imperative commands for managing users
 and groups, such as useradd, are no longer available.</p><p>A user ID (uid) is assigned automatically.  You can also specify
 a uid manually by adding
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
     uid = 1000;
 </pre><p>
 
 to the user specification.</p><p>Groups can be specified similarly.  The following states that a
 group named <code class="literal">students</code> shall exist:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 users.extraGroups.students.gid = 1000;
 </pre><p>
 
@@ -47,7 +47,7 @@ commands such as <span class="command"><strong>useradd</strong></span>,
 <span class="command"><strong>groupmod</strong></span> and so on.  For instance, to create a user
 account named <code class="literal">alice</code>:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ useradd -m alice</pre><p>
 
 The flag <code class="option">-m</code> causes the creation of a home directory
@@ -55,7 +55,7 @@ for the new user, which is generally what you want.  The user does not
 have an initial password and therefore cannot log in.  A password can
 be set using the <span class="command"><strong>passwd</strong></span> utility:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ passwd alice
 Enter new UNIX password: ***
 Retype new UNIX password: ***
@@ -63,7 +63,7 @@ Retype new UNIX password: ***
 
 A user can be deleted using <span class="command"><strong>userdel</strong></span>:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ userdel -r alice</pre><p>
 
 The flag <code class="option">-r</code> deletes the user’s home directory.

@@ -3,7 +3,7 @@
 your NixOS machine.</p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="sec-networkmanager"></a>10.1. NetworkManager</h2></div></div></div><p>To facilitate network configuration, some desktop environments
 use NetworkManager. You can enable NetworkManager by setting:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.networkmanager.enable = true;
 </pre><p>
 
@@ -15,7 +15,7 @@ you can still connect to the wireless networks using
 NetworkManager.</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="sec-ssh"></a>10.2. Secure Shell Access</h2></div></div></div><p>Secure shell (SSH) access to your machine can be enabled by
 setting:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 services.openssh.enable = true;
 </pre><p>
 
@@ -26,7 +26,7 @@ disabled entirely by setting
 a user as follows:
 
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 users.extraUsers.alice.openssh.authorizedKeys.keys =
   [ "ssh-dss AAAAB3NzaC1kc3MAAACBAPIkGWVEt4..." ];
 </pre><p>
@@ -36,14 +36,14 @@ users.extraUsers.alice.openssh.authorizedKeys.keys =
 interfaces.  However, you can configure an interface manually as
 follows:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.interfaces.eth0.ip4 = [ { address = "192.168.1.2"; prefixLength = 24; } ];
 </pre><p>
 
 Typically you’ll also want to set a default gateway and set of name
 servers:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.defaultGateway = "192.168.1.1";
 networking.nameservers = [ "8.8.8.8" ];
 </pre><p>
@@ -54,7 +54,7 @@ service
 The default gateway and name server configuration is performed by
 <code class="literal">network-setup.service</code>.</p></div><p>The host name is set using <code class="option">networking.hostName</code>:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.hostName = "cartman";
 </pre><p>
 
@@ -64,7 +64,7 @@ provide the host name.</p></div><div class="section"><div class="titlepage"><div
 is used to automatically assign IPv6 addresses to all interfaces.  You
 can disable IPv6 support globally by setting:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.enableIPv6 = false;
 </pre><p>
 
@@ -73,14 +73,14 @@ connections and other unexpected packets.  The firewall applies to
 both IPv4 and IPv6 traffic. It is enabled by default. It can be
 disabled as follows:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.firewall.enable = false;
 </pre><p>
 
 If the firewall is enabled, you can open specific TCP ports to the
 outside world:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.firewall.allowedTCPPorts = [ 80 443 ];
 </pre><p>
 
@@ -90,7 +90,7 @@ ports can be opened through
 <code class="option">networking.firewall.allowedUDPPorts</code>.  Also of
 interest is
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.firewall.allowPing = true;
 </pre><p>
 
@@ -101,7 +101,7 @@ you just have to make sure the user is in the
 section on wireless networks.</p><p>
 NixOS will start wpa_supplicant for you if you enable this setting:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting ">
 networking.wireless.enable = true;
 </pre><p>
 
@@ -113,13 +113,13 @@ wpa_supplicant.conf(5)).
 If you are using WPA2 the <span class="command"><strong>wpa_passphrase</strong></span> tool might be useful
 to generate the <code class="literal">wpa_supplicant.conf</code>.
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ wpa_passphrase ESSID PSK &gt; /etc/wpa_supplicant.conf</pre><p>
 
 After you have edited the <code class="literal">wpa_supplicant.conf</code>,
 you need to restart the wpa_supplicant service.
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ systemctl restart wpa_supplicant.service</pre><p>
 </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="ad-hoc-network-config"></a>10.7. Ad-Hoc Configuration</h2></div></div></div><p>You can use <code class="option">networking.localCommands</code> to specify
 shell commands to be run at the end of
@@ -127,7 +127,7 @@ shell commands to be run at the end of
 network configuration not covered by the existing NixOS modules.  For
 instance, to statically configure an IPv6 address:
 
-</p><pre class="programlisting">
+</p><pre class="programlisting nix">
 networking.localCommands =
   ''
     ip -6 addr add 2001:610:685:1::1/64 dev eth0

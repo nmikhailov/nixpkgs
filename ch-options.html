@@ -49,7 +49,7 @@ kernel configuration parameters for the crash dump to work.
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "pkgs.linuxPackages"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.linuxPackages_2_6_25</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/misc/crashdump.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">pkgs.linuxPackages_2_6_25</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/misc/crashdump.nix" target="_top">
               &lt;nixpkgs/nixos/modules/misc/crashdump.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-boot.crashDump.kernelParams"></a><a class="term" href="ch-options.html#opt-boot.crashDump.kernelParams"><code class="option">boot.crashDump.kernelParams</code></a></span></dt><dd><p>Parameters that will be passed to the kernel kexec-ed on crash.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
@@ -97,7 +97,7 @@ specify module options.  See
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 options parport_pc io=0x378 irq=7 dma=1
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/system/boot/modprobe.nix" target="_top">
               &lt;nixpkgs/nixos/modules/system/boot/modprobe.nix&gt;
@@ -109,7 +109,7 @@ options parport_pc io=0x378 irq=7 dma=1
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.linuxPackages.nvidia_x11 ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/system/boot/kernel.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ pkgs.linuxPackages.nvidia_x11 ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/system/boot/kernel.nix" target="_top">
               &lt;nixpkgs/nixos/modules/system/boot/kernel.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-boot.extraTTYs"></a><a class="term" href="ch-options.html#opt-boot.extraTTYs"><code class="option">boot.extraTTYs</code></a></span></dt><dd><p>Tty (virtual console) devices, in addition to the consoles on
 which mingetty and syslogd run, that must be initialised.
@@ -495,7 +495,7 @@ then it also needs to contain an attribute
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "pkgs.linuxPackages"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.linuxPackages_2_6_25</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/system/boot/kernel.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">pkgs.linuxPackages_2_6_25</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/system/boot/kernel.nix" target="_top">
               &lt;nixpkgs/nixos/modules/system/boot/kernel.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-boot.kernelParams"></a><a class="term" href="ch-options.html#opt-boot.kernelParams"><code class="option">boot.kernelParams</code></a></span></dt><dd><p>Parameters added to the kernel command line.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "list of strings"
@@ -652,7 +652,7 @@ just before the menu entries.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 # GRUB 1 example (not GRUB 2 compatible)
 title Windows
   chainloader (hd0,1)+1
@@ -682,7 +682,7 @@ attribute value specifies the source file.
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{ "memtest.bin" = "${pkgs.memtest86plus}/memtest.bin"; }
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{ "memtest.bin" = "${pkgs.memtest86plus}/memtest.bin"; }
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/system/boot/loader/grub/grub.nix" target="_top">
               &lt;nixpkgs/nixos/modules/system/boot/loader/grub/grub.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-boot.loader.grub.extraPerEntryConfig"></a><a class="term" href="ch-options.html#opt-boot.loader.grub.extraPerEntryConfig"><code class="option">boot.loader.grub.extraPerEntryConfig</code></a></span></dt><dd><p>Additional GRUB commands inserted in the configuration file
@@ -726,7 +726,7 @@ booting from the GRUB boot menu.
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{ demo = ''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{ demo = ''
     #!ipxe
     dhcp
     chain http://boot.ipxe.org/demo/boot.php
@@ -779,7 +779,7 @@ Memtest86+ source code.
 <code class="literal">null</code> to run GRUB in text mode.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "null or path"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">./my-background.png</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/system/boot/loader/grub/grub.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">./my-background.png</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/system/boot/loader/grub/grub.nix" target="_top">
               &lt;nixpkgs/nixos/modules/system/boot/loader/grub/grub.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-boot.loader.grub.timeout"></a><a class="term" href="ch-options.html#opt-boot.loader.grub.timeout"><code class="option">boot.loader.grub.timeout</code></a></span></dt><dd><p>Timeout (in seconds) until GRUB boots the default menu item.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
@@ -1005,7 +1005,7 @@ on the host system, allowing it to be started and stopped via
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{ webserver =
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{ webserver =
     { path = "/nix/var/nix/profiles/webserver";
     };
   database =
@@ -1081,7 +1081,7 @@ setting only if you know exactly what you're doing.
         "path"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "/nix/store/hhp7yd9hsxb2x0a01lk4girjlr5s7pyj-bash-4.3-p33/bin/sh"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">"${pkgs.dash}/bin/dash"
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">"${pkgs.dash}/bin/dash"
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/config/shells-environment.nix" target="_top">
               &lt;nixpkgs/nixos/modules/config/shells-environment.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-environment.blcr.enable"></a><a class="term" href="ch-options.html#opt-environment.blcr.enable"><code class="option">environment.blcr.enable</code></a></span></dt><dd><p>Whether to enable support for the BLCR checkpointing tool.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
@@ -1106,7 +1106,7 @@ setting only if you know exactly what you're doing.
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{ hosts =
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{ hosts =
     { source = "/nix/store/.../etc/dir/file.conf.example";
       mode = "0440";
     };
@@ -1206,13 +1206,13 @@ library and config.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.gnome3.totem ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/desktop-managers/gnome3.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ pkgs.gnome3.totem ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/desktop-managers/gnome3.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/x11/desktop-managers/gnome3.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-environment.gnome3.packageSet"></a><a class="term" href="ch-options.html#opt-environment.gnome3.packageSet"><code class="option">environment.gnome3.packageSet</code></a></span></dt><dd><p>Which GNOME 3 package set to use.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.gnome3_12</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/desktop-managers/gnome3.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">pkgs.gnome3_12</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/desktop-managers/gnome3.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/x11/desktop-managers/gnome3.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-environment.interactiveShellInit"></a><a class="term" href="ch-options.html#opt-environment.interactiveShellInit"><code class="option">environment.interactiveShellInit</code></a></span></dt><dd><p>Shell script code called during interactive shell initialisation.
 This code is asumed to be shell-independent, which means you should
@@ -1369,7 +1369,7 @@ installing them in the default profile,
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.firefox pkgs.thunderbird ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/config/system-path.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ pkgs.firefox pkgs.thunderbird ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/config/system-path.nix" target="_top">
               &lt;nixpkgs/nixos/modules/config/system-path.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-environment.unixODBCDrivers"></a><a class="term" href="ch-options.html#opt-environment.unixODBCDrivers"><code class="option">environment.unixODBCDrivers</code></a></span></dt><dd><p>Specifies Unix ODBC drivers to be registered in
 <code class="filename">/etc/odbcinst.ini</code>.  You may also want to
@@ -1383,7 +1383,7 @@ a command line client to connnect to ODBC databases.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">map (x : x.ini) (with pkgs.unixODBCDrivers; [ mysql psql psqlng ] )</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/config/unix-odbc-drivers.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">map (x : x.ini) (with pkgs.unixODBCDrivers; [ mysql psql psqlng ] )</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/config/unix-odbc-drivers.nix" target="_top">
               &lt;nixpkgs/nixos/modules/config/unix-odbc-drivers.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-environment.variables"></a><a class="term" href="ch-options.html#opt-environment.variables"><code class="option">environment.variables</code></a></span></dt><dd><p>A set of environment variables used in the global environment.
 These variables will be set on shell initialisation.
@@ -1412,7 +1412,7 @@ characters.
               &lt;nixpkgs/nixos/modules/programs/wvdial.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-environment.wvdial.pppDefaults"></a><a class="term" href="ch-options.html#opt-environment.wvdial.pppDefaults"><code class="option">environment.wvdial.pppDefaults</code></a></span></dt><dd><p>Default ppp settings for wvdial.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 noipdefault
 usepeerdns
 defaultroute
@@ -1794,7 +1794,7 @@ TrueType fonts. <code class="literal">free</code> uses free fonts,
               &lt;nixpkgs/nixos/modules/config/fonts/fontconfig-ultimate.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-fonts.fonts"></a><a class="term" href="ch-options.html#opt-fonts.fonts"><code class="option">fonts.fonts</code></a></span></dt><dd><p>List of primary font paths.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "list of paths"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.dejavu_fonts ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/config/fonts/fonts.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ pkgs.dejavu_fonts ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/config/fonts/fonts.nix" target="_top">
               &lt;nixpkgs/nixos/modules/config/fonts/fonts.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-gnu"></a><a class="term" href="ch-options.html#opt-gnu"><code class="option">gnu</code></a></span></dt><dd><p>When enabled, GNU software is chosen by default whenever a there is
           a choice between GNU and non-GNU software (e.g., GNU lsh
@@ -4230,7 +4230,7 @@ in the chroot.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 gc-keep-outputs = true
 gc-keep-derivations = true
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/misc/nix-daemon.nix" target="_top">
@@ -4371,7 +4371,7 @@ to a set of new or overridden packages.
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{ firefox.enableGeckoMediaPlayer = true;
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{ firefox.enableGeckoMediaPlayer = true;
   packageOverrides = pkgs: {
     firefox60Pkgs = pkgs.firefox60Pkgs.override {
       enableOfficialBranding = true;
@@ -4537,7 +4537,7 @@ it goes to suspend or hibernation.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">"${pkgs.hdparm}/sbin/hdparm -B 255 /dev/sda"
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">"${pkgs.hdparm}/sbin/hdparm -B 255 /dev/sda"
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/config/power-management.nix" target="_top">
               &lt;nixpkgs/nixos/modules/config/power-management.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-powerManagement.powerUpCommands"></a><a class="term" href="ch-options.html#opt-powerManagement.powerUpCommands"><code class="option">powerManagement.powerUpCommands</code></a></span></dt><dd><p>Commands executed when the machine powers up.  That is,
@@ -4547,7 +4547,7 @@ it resumes from suspend or hibernation.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">"${pkgs.hdparm}/sbin/hdparm -B 255 /dev/sda"
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">"${pkgs.hdparm}/sbin/hdparm -B 255 /dev/sda"
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/config/power-management.nix" target="_top">
               &lt;nixpkgs/nixos/modules/config/power-management.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-powerManagement.resumeCommands"></a><a class="term" href="ch-options.html#opt-powerManagement.resumeCommands"><code class="option">powerManagement.resumeCommands</code></a></span></dt><dd><p>Commands executed after the system resumes from suspend-to-RAM.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
@@ -4607,7 +4607,7 @@ the kernel configures "max_performance".
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.bash.promptInit"></a><a class="term" href="ch-options.html#opt-programs.bash.promptInit"><code class="option">programs.bash.promptInit</code></a></span></dt><dd><p>Shell script code used to initialise the bash prompt.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 # Provide a nice prompt.
 PROMPT_COLOR="1;31m"
 let $UID &amp;&amp; PROMPT_COLOR="1;32m"
@@ -4692,7 +4692,7 @@ See <span class="citerefentry"><span class="refentrytitle">nanorc</span>(5)</spa
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 set nowrap
 set tabstospaces
 set tabsize 4
@@ -4791,7 +4791,7 @@ passphrases every time you make an SSH connection.  Use
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zsh.promptInit"></a><a class="term" href="ch-options.html#opt-programs.zsh.promptInit"><code class="option">programs.zsh.promptInit</code></a></span></dt><dd><p>Shell script code used to initialise the zsh prompt.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 autoload -U promptinit &amp;&amp; promptinit &amp;&amp; prompt walters
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/programs/zsh/zsh.nix" target="_top">
               &lt;nixpkgs/nixos/modules/programs/zsh/zsh.nix&gt;
@@ -5438,7 +5438,7 @@ used by many programs that use OpenSSL, such as
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ "${pkgs.cacert}/etc/ca-bundle.crt" ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/security/ca.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ "${pkgs.cacert}/etc/ca-bundle.crt" ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/security/ca.nix" target="_top">
               &lt;nixpkgs/nixos/modules/security/ca.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-security.pki.certificates"></a><a class="term" href="ch-options.html#opt-security.pki.certificates"><code class="option">security.pki.certificates</code></a></span></dt><dd><p>A list of trusted root certificates in PEM format.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
@@ -5490,7 +5490,7 @@ http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html#polkit-rule
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 /* Log authorization checks. */
 polkit.addRule(function(action, subject) {
   polkit.log("user " +  subject.user + " is attempting action " + action.id + " from PID " + subject.pid);
@@ -5891,7 +5891,7 @@ is supported.
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "postgresql:///bacula"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 postgresql://bacula:bacula@localhost:5432/bacula
 mysql+mysqlconnector://&lt;user&gt;:&lt;password&gt;@&lt;hostname&gt;/&lt;database&gt;'
 sqlite:////var/lib/bacula/bacula.db'
@@ -5967,7 +5967,7 @@ sqlite:////var/lib/bacula/bacula.db'
               &lt;nixpkgs/nixos/modules/services/misc/apache-kafka.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.apache-kafka.log4jProperties"></a><a class="term" href="ch-options.html#opt-services.apache-kafka.log4jProperties"><code class="option">services.apache-kafka.log4jProperties</code></a></span></dt><dd><p>Kafka log4j property configuration.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 log4j.rootLogger=INFO, stdout 
 
 log4j.appender.stdout=org.apache.log4j.ConsoleAppender
@@ -6012,7 +6012,7 @@ percent, or when the UPS has calculated that it has 5 minutes or less
 of remaining power-on time. See man apcupsd.conf for details.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 UPSTYPE usb
 NISIP 127.0.0.1
 BATTERYLEVEL 50
@@ -6157,7 +6157,7 @@ domain by transparently querying the Avahi daemon.
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 TODO
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/backup/bacula.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/backup/bacula.nix&gt;
@@ -6166,7 +6166,7 @@ TODO
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 Maximum Concurrent Jobs = 20;
 Heartbeat Interval = 30;
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/backup/bacula.nix" target="_top">
@@ -6176,7 +6176,7 @@ Heartbeat Interval = 30;
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 console = all
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/backup/bacula.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/backup/bacula.nix&gt;
@@ -6236,7 +6236,7 @@ console = all
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 Maximum Concurrent Jobs = 20;
 Heartbeat Interval = 30;
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/backup/bacula.nix" target="_top">
@@ -6246,7 +6246,7 @@ Heartbeat Interval = 30;
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 console = all
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/backup/bacula.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/backup/bacula.nix&gt;
@@ -6285,7 +6285,7 @@ console = all
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 LabelMedia = yes
 Random Access = no
 AutomaticMount = no
@@ -6336,7 +6336,7 @@ AlwaysOpen = no
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 console = all
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/backup/bacula.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/backup/bacula.nix&gt;
@@ -6345,7 +6345,7 @@ console = all
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 Maximum Concurrent Jobs = 20;
 Heartbeat Interval = 30;
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/backup/bacula.nix" target="_top">
@@ -7522,7 +7522,7 @@ based on systemCronJobs.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ "* * * * *  test   ls -l / &gt; /tmp/cronout 2&gt;&amp;1"
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ "* * * * *  test   ls -l / &gt; /tmp/cronout 2&gt;&amp;1"
   "* * * * *  eelco  echo Hello World &gt; /home/eelco/cronout"
 ]
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/scheduling/cron.nix" target="_top">
@@ -7689,7 +7689,7 @@ is included.
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 option subnet-mask 255.255.255.0;
 option broadcast-address 192.168.1.255;
 option routers 192.168.1.5;
@@ -8150,7 +8150,7 @@ Block Device.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ ./myejabberd.dump ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/networking/ejabberd.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ ./myejabberd.dump ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/networking/ejabberd.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/networking/ejabberd.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.ejabberd.logsDir"></a><a class="term" href="ch-options.html#opt-services.ejabberd.logsDir"><code class="option">services.ejabberd.logsDir</code></a></span></dt><dd><p>Location of the logfile directory of ejabberd</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "unspecified"
@@ -8209,7 +8209,7 @@ Block Device.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 node.name: "elasticsearch"
 node.master: true
 node.data: false
@@ -8225,7 +8225,7 @@ index.number_of_replicas: 1
               &lt;nixpkgs/nixos/modules/services/search/elasticsearch.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.elasticsearch.logging"></a><a class="term" href="ch-options.html#opt-services.elasticsearch.logging"><code class="option">services.elasticsearch.logging</code></a></span></dt><dd><p>Elasticsearch logging configuration.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 rootLogger: INFO, console
 logger:
   action: INFO
@@ -8298,7 +8298,7 @@ appender:
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{
   "CORS": "*",
   "NAME": "default-name",
   "MAX_RESULT_BUFFER": "1024",
@@ -8408,7 +8408,7 @@ as root is not supported.
 generally not necessary to change it.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 [Definition]
 loglevel  = INFO
 logtarget = SYSLOG
@@ -8602,7 +8602,7 @@ Firefox users to store all synchronized data on their own server. To use this
 server, Firefox users should visit the <code class="option">about:config</code>, and
 replicate the following change
 
-</p><pre class="screen">
+</p><pre class="screen ">
 services.sync.tokenServerURI: http://localhost:5000/token/1.0/sync/1.5
 </pre><p>
 
@@ -8682,7 +8682,7 @@ connections to your server.
               &lt;nixpkgs/nixos/modules/services/networking/flashpolicyd.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.flashpolicyd.policy"></a><a class="term" href="ch-options.html#opt-services.flashpolicyd.policy"><code class="option">services.flashpolicyd.policy</code></a></span></dt><dd><p>The policy to be served.  The default is to allow connections from any domain to any port.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "unspecified"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 &lt;?xml version="1.0"?&gt;
 &lt;!DOCTYPE cross-domain-policy SYSTEM "/xml/dtds/cross-domain-policy.dtd"&gt;
 &lt;cross-domain-policy&gt; 
@@ -8744,7 +8744,7 @@ for configuration options.
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{
   VERBOSITY = 1;
   ETCD_REQUEST_TIMEOUT = "2.0";
   AGENT_TTL = "40s";
@@ -8778,7 +8778,7 @@ This data can be used directly by a client of fleet to make scheduling decisions
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{
   region = "us-west";
   az = "us-west-1";
 }
@@ -9449,11 +9449,11 @@ For more information visit
               &lt;nixpkgs/nixos/modules/services/monitoring/graphite.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.graphite.api.extraConfig"></a><a class="term" href="ch-options.html#opt-services.graphite.api.extraConfig"><code class="option">services.graphite.api.extraConfig</code></a></span></dt><dd><p>Extra configuration for graphite api.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 whisper:
   directories:
       - /var/db/graphite/whisper
-''</pre><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">allowed_origins:
+''</pre><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">allowed_origins:
   - dashboard.example.com
 cheat_times: true
 influxdb:
@@ -9509,7 +9509,7 @@ cache:
         "null or string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 &lt;env&gt;.applications.&lt;app&gt;.all.requests (60) = sum &lt;env&gt;.applications.&lt;app&gt;.*.requests
 &lt;env&gt;.applications.&lt;app&gt;.all.latency (60) = avg &lt;env&gt;.applications.&lt;app&gt;.*.latency
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/monitoring/graphite.nix" target="_top">
@@ -9524,7 +9524,7 @@ cache:
               &lt;nixpkgs/nixos/modules/services/monitoring/graphite.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.graphite.carbon.config"></a><a class="term" href="ch-options.html#opt-services.graphite.carbon.config"><code class="option">services.graphite.carbon.config</code></a></span></dt><dd><p>Content of carbon configuration file.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 [cache]
 # Listen on localhost by default for security reasons
 UDP_RECEIVER_INTERFACE = 127.0.0.1
@@ -9558,7 +9558,7 @@ LOG_CACHE_HITS = False
         "null or string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 [example]
 pattern = ^mydata\.foo\..+
 servers = 10.1.2.3, 10.1.2.4:2004, myserver.mydomain.com
@@ -9570,7 +9570,7 @@ in a search and replace fashion.
         "null or string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 [post]
 _sum$ =
 _avg$ =
@@ -9580,7 +9580,7 @@ _avg$ =
         "null or string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 [all_min]
 pattern = \.min$
 xFilesFactor = 0.1
@@ -9591,7 +9591,7 @@ aggregationMethod = min
         "null or string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 [apache_busyWorkers]
 pattern = ^servers\.www.*\.workers\.busyWorkers$
 retentions = 15s:7d,1m:21d,15m:5y
@@ -9614,13 +9614,13 @@ retentions = 15s:7d,1m:21d,15m:5y
               &lt;nixpkgs/nixos/modules/services/monitoring/graphite.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.graphite.pager.alerts"></a><a class="term" href="ch-options.html#opt-services.graphite.pager.alerts"><code class="option">services.graphite.pager.alerts</code></a></span></dt><dd><p>Alerts configuration for graphite-pager.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 alerts:
   - target: constantLine(100)
     warning: 90
     critical: 200
     name: Test
-''</pre><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pushbullet_key: pushbullet_api_key
+''</pre><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">pushbullet_key: pushbullet_api_key
 alerts:
   - target: stats.seatgeek.app.deal_quality.venue_info_cache.hit
     warning: .5
@@ -9664,7 +9664,7 @@ alerts:
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{
   GRAPHITE_USERNAME = "user";
   GRAPHITE_PASSWORD = "pass";
 }
@@ -9726,7 +9726,7 @@ alerts:
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 tcp-port = 655
 udp-port = 655
 mtu = 1480
@@ -9908,7 +9908,7 @@ interface to an upstream interface).
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 auth_algo=0
 ieee80211n=1
 ht_capab=[HT40-][SHORT-GI-40][DSSS_CCK-40]
@@ -9976,7 +9976,7 @@ NixOS generates one automatically.
         "path"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         <em class="replaceable"><code>(build of httpd.conf)</code></em>
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.writeText "httpd.conf" "# my custom config file ...";</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/web-servers/apache-httpd/default.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">pkgs.writeText "httpd.conf" "# my custom config file ...";</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/web-servers/apache-httpd/default.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/web-servers/apache-httpd/default.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.httpd.documentRoot"></a><a class="term" href="ch-options.html#opt-services.httpd.documentRoot"><code class="option">services.httpd.documentRoot</code></a></span></dt><dd><p>The path of Apache's document root directory.  If left undefined,
 an empty directory in the Nix store will be used as root.
@@ -10020,7 +10020,7 @@ directories and directory aliases defined by default.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 &lt;Directory /home&gt;
   Options FollowSymlinks
   AllowOverride All
@@ -10040,7 +10040,7 @@ module.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ "proxy_connect" { name = "php5"; path = "${pkgs.php}/modules/libphp5.so"; } ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/web-servers/apache-httpd/default.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ "proxy_connect" { name = "php5"; path = "${pkgs.php}/modules/libphp5.so"; } ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/web-servers/apache-httpd/default.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/web-servers/apache-httpd/default.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.httpd.extraSubservices"></a><a class="term" href="ch-options.html#opt-services.httpd.extraSubservices"><code class="option">services.httpd.extraSubservices</code></a></span></dt><dd><p>Extra subservices to enable in the webserver.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "list of unspecifieds"
@@ -10138,7 +10138,7 @@ connections more efficiently).
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 date.timezone = "CET"
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/web-servers/apache-httpd/default.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/web-servers/apache-httpd/default.nix&gt;
@@ -10315,7 +10315,7 @@ directories and directory aliases defined by default.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 &lt;Directory /home&gt;
   Options FollowSymlinks
   AllowOverride All
@@ -10620,9 +10620,9 @@ and 443 for https (i.e. when enableSSL is set).
               &lt;nixpkgs/nixos/modules/services/databases/influxdb.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.influxdb.apiExtraConfig"></a><a class="term" href="ch-options.html#opt-services.influxdb.apiExtraConfig"><code class="option">services.influxdb.apiExtraConfig</code></a></span></dt><dd><p>Extra influxdb api configuration</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 read-timeout = "5s"
-''</pre><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+''</pre><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 ssl-port = 8084
 ssl-cert = /path/to/cert.pem
 read-timeout = "5s"
@@ -10642,7 +10642,7 @@ read-timeout = "5s"
               &lt;nixpkgs/nixos/modules/services/databases/influxdb.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.influxdb.clusterConfig"></a><a class="term" href="ch-options.html#opt-services.influxdb.clusterConfig"><code class="option">services.influxdb.clusterConfig</code></a></span></dt><dd><p>Influxdb cluster configuration</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 protobuf_port = 8099
 protobuf_timeout = "2s"
 protobuf_heartbeat = "200ms"
@@ -10683,7 +10683,7 @@ concurrent-shard-query-limit = 10
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 [input_plugins.graphite]
 enabled = true
 port = 2003
@@ -10692,7 +10692,7 @@ database = "graphite"
               &lt;nixpkgs/nixos/modules/services/databases/influxdb.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.influxdb.leveldbConfig"></a><a class="term" href="ch-options.html#opt-services.influxdb.leveldbConfig"><code class="option">services.influxdb.leveldbConfig</code></a></span></dt><dd><p>Influxdb leveldb configuration</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 max-open-files = 40
 lru-cache-size = "200m"
 max-open-shards = 0
@@ -10702,13 +10702,13 @@ write-batch-size = 5000000
               &lt;nixpkgs/nixos/modules/services/databases/influxdb.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.influxdb.raftConfig"></a><a class="term" href="ch-options.html#opt-services.influxdb.raftConfig"><code class="option">services.influxdb.raftConfig</code></a></span></dt><dd><p>Influxdb raft configuration</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 port = 8090
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/databases/influxdb.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/databases/influxdb.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.influxdb.shardingConfig"></a><a class="term" href="ch-options.html#opt-services.influxdb.shardingConfig"><code class="option">services.influxdb.shardingConfig</code></a></span></dt><dd><p>Influxdb sharding configuration</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 replication-factor = 1
 
 [sharding.short-term]
@@ -10722,7 +10722,7 @@ split = 1
               &lt;nixpkgs/nixos/modules/services/databases/influxdb.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.influxdb.storageConfig"></a><a class="term" href="ch-options.html#opt-services.influxdb.storageConfig"><code class="option">services.influxdb.storageConfig</code></a></span></dt><dd><p>Influxdb raft configuration</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 write-buffer-size = 10000
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/databases/influxdb.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/databases/influxdb.nix&gt;
@@ -10734,7 +10734,7 @@ write-buffer-size = 10000
               &lt;nixpkgs/nixos/modules/services/databases/influxdb.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.influxdb.walConfig"></a><a class="term" href="ch-options.html#opt-services.influxdb.walConfig"><code class="option">services.influxdb.walConfig</code></a></span></dt><dd><p>Influxdb write-ahead log configuration</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 flush-after = 1000
 bookmark-after = 1000
 index-after = 1000
@@ -10793,7 +10793,7 @@ requests-per-logfile = 10000
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">/root/certificates/irc.pem</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/networking/ircd-hybrid/default.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">/root/certificates/irc.pem</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/networking/ircd-hybrid/default.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/networking/ircd-hybrid/default.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.ircdHybrid.description"></a><a class="term" href="ch-options.html#opt-services.ircdHybrid.description"><code class="option">services.ircdHybrid.description</code></a></span></dt><dd><p>
           IRCD server description.
@@ -10843,7 +10843,7 @@ requests-per-logfile = 10000
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">/root/certificates/irc.key</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/networking/ircd-hybrid/default.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">/root/certificates/irc.key</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/networking/ircd-hybrid/default.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/networking/ircd-hybrid/default.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.ircdHybrid.serverName"></a><a class="term" href="ch-options.html#opt-services.ircdHybrid.serverName"><code class="option">services.ircdHybrid.serverName</code></a></span></dt><dd><p>
           IRCD server name.
@@ -11194,7 +11194,7 @@ should be much faster.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[
   {user = "admin";}
   {user = "scheduler"; readonly = true; kind= "pods";}
   {user = "scheduler"; kind = "bindings";}
@@ -11271,7 +11271,7 @@ secure port.
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{
   alice = "abc123";
   bob = "xyz987";
 }
@@ -11478,7 +11478,7 @@ http://git.zx2c4.com/cgit/tree/cgitrc.5.txt
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 cache-size=1000
 scan-path=/srv/git
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/web-servers/lighttpd/cgit.nix" target="_top">
@@ -11868,7 +11868,7 @@ available options.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "noop {}"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 if [type] == "syslog" {
   # Keep only relevant systemd fields
   # http://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html
@@ -11891,7 +11891,7 @@ if [type] == "syslog" {
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ''stdin { type =&gt; "example" }''
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 # Read from journal
 pipe {
   command =&gt; "/nix/store/yqdd9zrl79vav8yvwwxbzrlb2k5k4rh4-systemd-217/bin/journalctl -f -o json"
@@ -11909,7 +11909,7 @@ pipe {
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ''stdout { debug =&gt; true debug_format =&gt; "json"}''
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 redis { host =&gt; "localhost" data_type =&gt; "list" key =&gt; "logstash" codec =&gt; json }
 elasticsearch { embedded =&gt; true }
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/logging/logstash.nix" target="_top">
@@ -11922,7 +11922,7 @@ elasticsearch { embedded =&gt; true }
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.logstash-contrib ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/logging/logstash.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ pkgs.logstash-contrib ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/logging/logstash.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/logging/logstash.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.logstash.port"></a><a class="term" href="ch-options.html#opt-services.logstash.port"><code class="option">services.logstash.port</code></a></span></dt><dd><p>Port on which to start webserver.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
@@ -12512,7 +12512,7 @@ or image files.  The directories must be accessible to the
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 nojournal = true
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/databases/mongodb.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/databases/mongodb.nix&gt;
@@ -12589,7 +12589,7 @@ Otherwise, leave empty to run as single node.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.mopidy-spotify ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/audio/mopidy.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ pkgs.mopidy-spotify ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/audio/mopidy.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/audio/mopidy.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.mopidy.extraConfigFiles"></a><a class="term" href="ch-options.html#opt-services.mopidy.extraConfigFiles"><code class="option">services.mopidy.extraConfigFiles</code></a></span></dt><dd><p>Extra config file read by Mopidy when the service starts.
 Later files in the list overrides earlier configuration.
@@ -12695,7 +12695,7 @@ favourite webserver to serve static files.
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">services = {
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">services = {
    munin-node.enable = true;
    munin-cron = {
      enable = true;
@@ -12725,7 +12725,7 @@ hosts for cron to succeed. See
 <a class="link" href="http://munin-monitoring.org/wiki/munin.conf" target="_top">http://munin-monitoring.org/wiki/munin.conf</a>
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "unspecified"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 [''${config.networking.hostName}]
 address localhost
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/monitoring/munin.nix" target="_top">
@@ -12938,7 +12938,7 @@ state it again.
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 key_buffer_size = 6G
 table_cache = 1600
 log-error = /var/log/mysql_err.log
@@ -13192,7 +13192,7 @@ The default is to update at 01:15 (at night) every day.
               &lt;nixpkgs/nixos/modules/services/databases/neo4j.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.neo4j.loggingConfig"></a><a class="term" href="ch-options.html#opt-services.neo4j.loggingConfig"><code class="option">services.neo4j.loggingConfig</code></a></span></dt><dd><p>Neo4j logging configuration.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 handlers=java.util.logging.ConsoleHandler
 .level=INFO
 org.neo4j.server.level=INFO
@@ -13472,7 +13472,7 @@ consoles.
               &lt;nixpkgs/nixos/modules/services/networking/notbit.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.nscd.config"></a><a class="term" href="ch-options.html#opt-services.nscd.config"><code class="option">services.nscd.config</code></a></span></dt><dd><p>Configuration to use for Name Service Cache Daemon.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 server-user             nscd
 threads                 1
 paranoia                no
@@ -13879,7 +13879,7 @@ server does not allow IXFR.
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/networking/nsd.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/networking/nsd.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.nsd.zones._name_.allowNotify"></a><a class="term" href="ch-options.html#opt-services.nsd.zones._name_.allowNotify"><code class="option">services.nsd.zones.&lt;name&gt;.allowNotify</code></a></span></dt><dd><p>Listed primary servers are allowed to notify this secondary server.
-</p><pre class="screen">
+</p><pre class="screen ">
 Format: &lt;ip&gt; &lt;key-name | NOKEY | BLOCKED&gt;
 
 &lt;ip&gt; either a plain IPv4/IPv6 address or range. Valid patters for ranges:
@@ -13939,7 +13939,7 @@ Use imports or pkgs.lib.readFile if you don't want this data in your config file
               &lt;nixpkgs/nixos/modules/services/networking/nsd.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.nsd.zones._name_.notify"></a><a class="term" href="ch-options.html#opt-services.nsd.zones._name_.notify"><code class="option">services.nsd.zones.&lt;name&gt;.notify</code></a></span></dt><dd><p>This primary server will notify all given secondary servers about
 zone changes.
-</p><pre class="screen">
+</p><pre class="screen ">
 Format: &lt;ip&gt; &lt;key-name | NOKEY&gt;
 
 &lt;ip&gt; a plain IPv4/IPv6 address with on optional port number (ip@port)
@@ -14050,7 +14050,7 @@ default, use the contents automatically generated by NixOS.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 --interface=any
 --http-port=3000
 --disable-login
@@ -14272,7 +14272,7 @@ name of the user associated with a TCP connection.
         "boolean"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">openldap.enable = true;
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">openldap.enable = true;
 openldap.extraConfig = ''
   include ${pkgs.openldap}/etc/openldap/schema/core.schema
   include ${pkgs.openldap}/etc/openldap/schema/cosine.schema
@@ -14321,7 +14321,7 @@ openldap.extraConfig = ''
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 listen on 127.0.0.1 
 listen on ::1 
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/networking/openntpd.nix" target="_top">
@@ -14377,7 +14377,7 @@ is left empty, the OpenSMTPD server will not start.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 listen on lo
 accept for any deliver to lmtp localhost:24
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/mail/opensmtpd.nix" target="_top">
@@ -14662,7 +14662,7 @@ attribute name.
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{
   server = {
     config = ''
       # Simplest server configuration: http://openvpn.net/index.php/documentation/miscellaneous/static-key-mini-howto.html.
@@ -15211,7 +15211,7 @@ without patching the .sql files which reference $libdir/postgis-1.5.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.postgis</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/databases/postgresql.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">pkgs.postgis</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/databases/postgresql.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/databases/postgresql.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.postgresql.identMap"></a><a class="term" href="ch-options.html#opt-services.postgresql.identMap"><code class="option">services.postgresql.identMap</code></a></span></dt><dd><p>Defines the mapping from system users to database users.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
@@ -15318,7 +15318,7 @@ Once setup, cronjob will run evert 15 minutes and report status.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 BrowsePoll cups.example.com
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/printing/cupsd.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/printing/cupsd.nix&gt;
@@ -15328,7 +15328,7 @@ BrowsePoll cups.example.com
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 ServerName server.example.com
 Encryption Never
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/printing/cupsd.nix" target="_top">
@@ -15347,7 +15347,7 @@ Encryption Never
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 BrowsePoll cups.example.com
 LogLevel debug
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/printing/cupsd.nix" target="_top">
@@ -15356,7 +15356,7 @@ LogLevel debug
 and Samba are added unconditionally.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "list of paths"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.splix ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/printing/cupsd.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ pkgs.splix ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/printing/cupsd.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/printing/cupsd.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.printing.enable"></a><a class="term" href="ch-options.html#opt-services.printing.enable"><code class="option">services.printing.enable</code></a></span></dt><dd><p>Whether to enable printing support through the CUPS daemon.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
@@ -15371,7 +15371,7 @@ and Samba are added unconditionally.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 BrowsePoll cups.example.com
 LogLevel debug
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/printing/cupsd.nix" target="_top">
@@ -15840,7 +15840,7 @@ configuration file
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.radvd.config"></a><a class="term" href="ch-options.html#opt-services.radvd.config"><code class="option">services.radvd.config</code></a></span></dt><dd><p>The contents of the radvd configuration file.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "unspecified"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 interface eth0 {
   AdvSendAdvert on;
   prefix 2001:db8:1234:5678::/64 { };
@@ -16720,7 +16720,7 @@ now, as it is required to get a functional configuration.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 retains hourly 24
 retain daily 365
 backup /home/ localhost/
@@ -16791,7 +16791,7 @@ fairly standard setup of log files, which can be extended by
 means of <code class="varname">extraConfig</code>.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 # "local1" is used for dhcpd messages.
 local1.*                     -/var/log/dhcpd
 
@@ -16953,7 +16953,7 @@ to run a binary forever.
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{ 0 = [ "${postgresStats}/bin/collect-stats" ]; }</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/monitoring/scollector.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{ 0 = [ "${postgresStats}/bin/collect-stats" ]; }</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/monitoring/scollector.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/monitoring/scollector.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.scollector.enable"></a><a class="term" href="ch-options.html#opt-services.scollector.enable"><code class="option">services.scollector.enable</code></a></span></dt><dd><p>Whether to run scollector.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
@@ -17166,7 +17166,7 @@ different types traffic with different priorities.
 
 Username/password are extracted from <code class="filename">/var/spool/sitecopy/sitecopy.secrets</code> at activation
 time. The secrets file lines should have the following structure:
-</p><pre class="screen">
+</p><pre class="screen ">
   server username password
 </pre><p>
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
@@ -17387,7 +17387,7 @@ the servlet container hosting solr.
 everything is logged to stdout (picked up by systemd) with level INFO.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 log4j.rootLogger=INFO, stdout
 log4j.appender.stdout=org.apache.log4j.ConsoleAppender
 log4j.appender.stdout.Target=System.out
@@ -17433,7 +17433,7 @@ started, stopped, or examined using
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{
   pipe1 =
     { keyfile = "/var/lib/spiped/pipe1.key";
       encrypt = true;
@@ -17564,7 +17564,7 @@ perfect forward secrecy.
               &lt;nixpkgs/nixos/modules/rename.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.sslh.appendConfig"></a><a class="term" href="ch-options.html#opt-services.sslh.appendConfig"><code class="option">services.sslh.appendConfig</code></a></span></dt><dd><p>Verbatim configuration file.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 protocols:
 (
   { name: "ssh"; service: "ssh"; host: "localhost"; port: "22"; probe: "builtin"; },
@@ -17899,7 +17899,7 @@ this screen in the configuration.
 the syslog-ng version header.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 @version: 3.6
 @include "scl.conf"
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/logging/syslog-ng.nix" target="_top">
@@ -17929,7 +17929,7 @@ end in <code class="literal">/lib/syslog-ng</code>
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ "${pkgs.syslogng_incubator}/lib/syslog-ng" ]
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ "${pkgs.syslogng_incubator}/lib/syslog-ng" ]
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/logging/syslog-ng.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/logging/syslog-ng.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.syslogd.defaultConfig"></a><a class="term" href="ch-options.html#opt-services.syslogd.defaultConfig"><code class="option">services.syslogd.defaultConfig</code></a></span></dt><dd><p>The default <code class="filename">syslog.conf</code> file configures a
@@ -17937,7 +17937,7 @@ fairly standard setup of log files, which can be extended by
 means of <code class="varname">extraConfig</code>.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 # Send emergency messages to all users.
 *.emerg                       *
 
@@ -18072,7 +18072,7 @@ any time.
     
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{
   nixos =
     { directories = [ "/home" "/root/ssl" ];
     };
@@ -19106,7 +19106,7 @@ read before all other rules.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 KERNEL=="eth*", ATTR{address}=="00:1D:60:B9:6D:4F", NAME="my_fast_network_card"
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/hardware/udev.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/hardware/udev.nix&gt;
@@ -19399,7 +19399,7 @@ which should be either a set of names and configurations or a path to a director
     type = "normal"; 
     }
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">{
   type = "emperor";
   vassals = {
     moin = {
@@ -20022,7 +20022,7 @@ number can be omitted.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.gnome3.gpaste ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/desktop-managers/gnome3.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ pkgs.gnome3.gpaste ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/desktop-managers/gnome3.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/x11/desktop-managers/gnome3.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.xserver.desktopManager.kde4.enable"></a><a class="term" href="ch-options.html#opt-services.xserver.desktopManager.kde4.enable"><code class="option">services.xserver.desktopManager.kde4.enable</code></a></span></dt><dd><p>Enable the KDE 4 desktop environment.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "boolean"
@@ -20179,7 +20179,7 @@ X11 setup without a full power manager.
               &lt;nixpkgs/nixos/modules/services/x11/display-managers/default.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.xserver.displayManager.job.execCmd"></a><a class="term" href="ch-options.html#opt-services.xserver.displayManager.job.execCmd"><code class="option">services.xserver.displayManager.job.execCmd</code></a></span></dt><dd><p>Command to start the display manager.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">"${pkgs.slim}/bin/slim"
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">"${pkgs.slim}/bin/slim"
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/display-managers/default.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/x11/display-managers/default.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.xserver.displayManager.job.logsXsession"></a><a class="term" href="ch-options.html#opt-services.xserver.displayManager.job.logsXsession"><code class="option">services.xserver.displayManager.job.logsXsession</code></a></span></dt><dd><p>Whether the display manager redirects the
@@ -20298,7 +20298,7 @@ followed by the window manager name.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ { manage = "desktop";
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ { manage = "desktop";
     name = "xterm";
     start = ''
       ${pkgs.xterm}/bin/xterm -ls &amp;
@@ -20312,7 +20312,7 @@ followed by the window manager name.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 xmessage "Hello World!" &amp;
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/display-managers/default.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/x11/display-managers/default.nix&gt;
@@ -20356,7 +20356,7 @@ collection of themes. TODO: berlios shut down.
         "null or path"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.fetchurl {
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">pkgs.fetchurl {
   url = "mirror://sourceforge/slim.berlios/slim-wave.tar.gz";
   sha256 = "0ndr419i5myzcylvxb89m9grl2xyq6fbnyc3lkd711mzlmnnfxdy";
 }
@@ -20423,7 +20423,7 @@ collection of themes. TODO: berlios shut down.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 SubSection "extmod"
 EndSubsection
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/xserver.nix" target="_top">
@@ -20436,7 +20436,7 @@ EndSubsection
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.xf86_input_wacom ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/xserver.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ pkgs.xf86_input_wacom ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/xserver.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/x11/xserver.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.xserver.monitorSection"></a><a class="term" href="ch-options.html#opt-services.xserver.monitorSection"><code class="option">services.xserver.monitorSection</code></a></span></dt><dd><p>Contents of the first Monitor section of the X server configuration file.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
@@ -20451,7 +20451,7 @@ EndSubsection
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 Option "ScaleDistance" "50"
 Option "RotateDistance" "60"
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/hardware/multitouch.nix" target="_top">
@@ -20535,7 +20535,7 @@ server will automatically configure the resolution.
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 Option "RandRRotation" "on"
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/xserver.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/x11/xserver.nix&gt;
@@ -20543,7 +20543,7 @@ Option "RandRRotation" "on"
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 Option "BlankTime" "0"
 Option "StandbyTime" "0"
 Option "SuspendTime" "0"
@@ -20554,7 +20554,7 @@ Option "OffTime" "0"
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 Option "AIGLX" "true"
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/xserver.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/x11/xserver.nix&gt;
@@ -20579,7 +20579,7 @@ data.  Use <span class="command"><strong>ssh-add</strong></span> to add a key to
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 Option "RTCornerButton" "2"
 Option "RBCornerButton" "3"
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/hardware/synaptics.nix" target="_top">
@@ -20713,7 +20713,7 @@ if possible.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.vaapiIntel pkgs.vaapiVdpau ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/xserver.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ pkgs.vaapiIntel pkgs.vaapiVdpau ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/xserver.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/x11/xserver.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.xserver.videoDriver"></a><a class="term" href="ch-options.html#opt-services.xserver.videoDriver"><code class="option">services.xserver.videoDriver</code></a></span></dt><dd><p>The name of the video driver for your graphics card.  This
 option is obsolete; please set the
@@ -20793,7 +20793,7 @@ configuration.nix easily.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ luaPackages.oocairo ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/window-managers/awesome.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ luaPackages.oocairo ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/window-managers/awesome.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/x11/window-managers/awesome.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.xserver.windowManager.awesome.package"></a><a class="term" href="ch-options.html#opt-services.xserver.windowManager.awesome.package"><code class="option">services.xserver.windowManager.awesome.package</code></a></span></dt><dd><p>Package to use for running the Awesome WM.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "null or derivation"
@@ -20948,7 +20948,7 @@ in <code class="varname">haskellPackages</code> as the sole argument.
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "&lt;function&gt;"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">haskellPackages: [
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">haskellPackages: [
   haskellPackages.xmonad-contrib
   haskellPackages.monad-logger
 ]
@@ -20962,7 +20962,7 @@ Xmonad and the packages listed in
         "unspecified"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "pkgs.haskellngPackages"
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.haskell-ng.packages.ghc784</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/window-managers/xmonad.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">pkgs.haskell-ng.packages.ghc784</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/x11/window-managers/xmonad.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/x11/window-managers/xmonad.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.xserver.xkbModel"></a><a class="term" href="ch-options.html#opt-services.xserver.xkbModel"><code class="option">services.xserver.xkbModel</code></a></span></dt><dd><p>Keyboard model.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
@@ -21187,7 +21187,7 @@ This is the block generated by the `znc --makepass` command.
 !!! If not specified, please change this after starting the service. !!!
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 
         &lt;Pass password&gt;
                 Method = sha256
@@ -21287,7 +21287,7 @@ This is the user name used by the user logging into the ZNC web admin.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.zncModules.fish pkgs.zncModules.push ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/networking/znc.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ pkgs.zncModules.fish pkgs.zncModules.push ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/networking/znc.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/networking/znc.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.znc.mutable"></a><a class="term" href="ch-options.html#opt-services.znc.mutable"><code class="option">services.znc.mutable</code></a></span></dt><dd><p>Indicates whether to allow the contents of the `dataDir` directory to be changed
 by the user at run-time.
@@ -21357,7 +21357,7 @@ Recommended to generate with `znc --makeconf` command.
               &lt;nixpkgs/nixos/modules/services/misc/zookeeper.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.zookeeper.extraConf"></a><a class="term" href="ch-options.html#opt-services.zookeeper.extraConf"><code class="option">services.zookeeper.extraConf</code></a></span></dt><dd><p>Extra configuration for Zookeeper.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 initLimit=5
 syncLimit=2
 tickTime=2000
@@ -21371,7 +21371,7 @@ tickTime=2000
               &lt;nixpkgs/nixos/modules/services/misc/zookeeper.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.zookeeper.logging"></a><a class="term" href="ch-options.html#opt-services.zookeeper.logging"><code class="option">services.zookeeper.logging</code></a></span></dt><dd><p>Zookeeper logging configuration.</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 zookeeper.root.logger=INFO, CONSOLE
 log4j.rootLogger=INFO, CONSOLE
 log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
@@ -21403,7 +21403,7 @@ log4j.appender.CONSOLE.layout.ConversionPattern=[myid:%X{myid}] - %-5p [%t:%C{1}
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 server.0=host0:2888:3888
 server.1=host1:2888:3888
 server.2=host2:2888:3888
@@ -21437,7 +21437,7 @@ server.2=host2:2888:3888
               &lt;nixpkgs/nixos/modules/services/web-servers/zope2.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.zope2.instances._name__.extra"></a><a class="term" href="ch-options.html#opt-services.zope2.instances._name__.extra"><code class="option">services.zope2.instances.&lt;name?&gt;.extra</code></a></span></dt><dd><p>Extra zope.conf</p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">
         "string"
-      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting ">''
 &lt;zodb_db main&gt;
   mount-point /
   cache-size 30000
@@ -21497,7 +21497,7 @@ server.2=host2:2888:3888
         "string"
       </code></p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">''
 defaults.pcm.!card 3
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/services/audio/alsa.nix" target="_top">
               &lt;nixpkgs/nixos/modules/services/audio/alsa.nix&gt;
@@ -21655,7 +21655,7 @@ name length, and ideally should have close-to-identical directory layout.
     
     ]
   
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ ({ original = pkgs.openssl; replacement = pkgs.callPackage /path/to/openssl { ... }; }) ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/system/activation/top-level.nix" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting ">[ ({ original = pkgs.openssl; replacement = pkgs.callPackage /path/to/openssl { ... }; }) ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/NixOS/nixpkgs/blob/gfedcba/nixos/modules/system/activation/top-level.nix" target="_top">
               &lt;nixpkgs/nixos/modules/system/activation/top-level.nix&gt;
             </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.additionalUpstreamSystemUnits"></a><a class="term" href="ch-options.html#opt-systemd.additionalUpstreamSystemUnits"><code class="option">systemd.additionalUpstreamSystemUnits</code></a></span></dt><dd><p>Additional units shipped with systemd that shall be enabled.
 </p><p><span class="emphasis"><em>Type:</em></span> <code class="literal">

@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Chapter 23. Building Specific Parts of NixOS</title><link rel="stylesheet" type="text/css" href="style.css" /><link rel="stylesheet" type="text/css" href="highlight/github.css" /><script src="highlight/highlight.pack.js" type="text/javascript"></script><script src="highlight/init.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><link rel="home" href="index.html" title="NixOS Manual" /><link rel="up" href="ch-development.html" title="Part IV. Development" /><link rel="prev" href="sec-writing-modules.html" title="Chapter 22. Writing NixOS Modules" /><link rel="next" href="sec-building-cd.html" title="Chapter 24. Building Your Own NixOS CD" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 23. Building Specific Parts of NixOS</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="sec-writing-modules.html">Prev</a> </td><th width="60%" align="center">Part IV. Development</th><td width="20%" align="right"> <a accesskey="n" href="sec-building-cd.html">Next</a></td></tr></table><hr /></div><div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a id="sec-building-parts"></a>Chapter 23. Building Specific Parts of NixOS</h2></div></div></div><p>With the command <span class="command"><strong>nix-build</strong></span>, you can build
 specific parts of your NixOS configuration.  This is done as follows:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ cd <em class="replaceable"><code>/path/to/nixpkgs/nixos</code></em>
 $ nix-build -A config.<em class="replaceable"><code>option</code></em></pre><p>
 
@@ -16,7 +16,7 @@ interest include:
       builds and what <code class="filename">/run/current-system</code> points
       to afterwards.</p><p>A shortcut to build this is:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-build -A system</pre><p>
       </p></dd><dt><span class="term"><code class="varname">system.build.manual.manual</code></span></dt><dd><p>The NixOS manual.</p></dd><dt><span class="term"><code class="varname">system.build.etc</code></span></dt><dd><p>A tree of symlinks that form the static parts of
     <code class="filename">/etc</code>.</p></dd><dt><span class="term"><code class="varname">system.build.initialRamdisk</code>, </span><span class="term"><code class="varname">system.build.kernel</code></span></dt><dd><p>The initial ramdisk and kernel of the system.  This allows
@@ -24,7 +24,7 @@ $ nix-build -A system</pre><p>
       boot correctly, by using QEMU’s <code class="option">-kernel</code> and
       <code class="option">-initrd</code> options:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-build -A config.system.build.initialRamdisk -o initrd
 $ nix-build -A config.system.build.kernel -o kernel
 $ qemu-system-x86_64 -kernel ./kernel/bzImage -initrd ./initrd/initrd -hda /dev/null
@@ -35,7 +35,7 @@ $ qemu-system-x86_64 -kernel ./kernel/bzImage -initrd ./initrd/initrd -hda /dev/
       (e.g. <code class="literal">httpd.service</code>), you need to put them
       between quotes, like this:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ nix-build -A 'config.systemd.units."httpd.service".unit'
 </pre><p>
 
@@ -43,7 +43,7 @@ $ nix-build -A 'config.systemd.units."httpd.service".unit'
       system, by putting them in
       <code class="filename">/run/systemd/system</code>:
 
-</p><pre class="screen">
+</p><pre class="screen ">
 $ cp $(nix-build -A 'config.systemd.units."httpd.service".unit')/httpd.service \
     /run/systemd/system/tmp-httpd.service
 $ systemctl daemon-reload
